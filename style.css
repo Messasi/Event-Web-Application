@@ -4,7 +4,7 @@ body{
     background: #f3f3f3;
 }
 
-/*slideshow image settings*/
+/*Slideshow image settings*/
 img{
     max-width: 150px;
     width: 100%;
@@ -12,7 +12,8 @@ img{
 
 
 
-/*Navbar */
+
+/*Navbar Settings*/
 
 .navbar {
     padding-top: 5px;
@@ -59,8 +60,8 @@ img{
 }
 
 /* Make the basket icon and text black */
-.navbar .nav-link i, .navbar .nav-link {
-    color: black !important;
+.navbar .nav-link i{
+    color: #5f92f8 !important;
 }
 
 .navbar-nav .nav-item {
@@ -84,8 +85,7 @@ img{
     text-decoration: none
 }
 
-
-/*Navbar Media*/
+/*Slideshow Media*/
 @media(min-width:992px){
     .dropdown>.dropdown-menu{
         visibility: hidden;
@@ -110,7 +110,12 @@ img{
 }
 
 
+
+
+
+
 /*SlideShow*/
+
 .c-item{
     height: 480px;
 }
@@ -118,13 +123,13 @@ img{
 .c-img{
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.45);
+    filter: brightness(0.4);
 
 }
 
 /*SlideShow Buttons*/
 .btn-primary {
-    background-color: #007bff; 
+    background-color: #3a8ae0; 
     border-color: #007bff;
     font-size: 1.2rem; 
     font-weight: 600;
@@ -134,8 +139,8 @@ img{
 }
 
 .btn-primary:hover {
-    background-color: #0056b3; /* Darker shade on hover for interaction feedback */
+    background-color: #0056b3; 
     border-color: #0056b3;
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4); /* Soft shadow for depth */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4); 
 }
 
