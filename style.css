@@ -1,15 +1,27 @@
+/*Full page settings*/
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     background: #f3f3f3;
 }
 
+/*slideshow image settings*/
 img{
     max-width: 150px;
     width: 100%;
 }
 
+
+
+/*Navbar */
+
+.navbar {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 60px; /* Reduce height */
+}
+
 .nav-link{
-    font-weight: 600;
+    font-weight: 525;
     color: black;
 }
 
@@ -56,6 +68,24 @@ img{
     padding-right: 15px;
 }
 
+.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Adjust the color and opacity as desired */
+    color: black; /* Optional: Keep text color black */
+    border-radius: 4px; /* Optional: Slight rounding to match design */
+}
+
+.nav-logo{
+    font-family: "Pacifico", sans-serif;
+    font-weight: 400; /* Bolder weight for a more professional look */
+    font-size: 1.5rem; /* Adjust size as needed for your design */
+    color: #5f92f8; /* Dark color for readability and elegance */
+    text-transform: up; /* Makes the logo look bold and professional */
+    letter-spacing: 0.05em; /* Adds spacing between letters for readability */
+    text-decoration: none
+}
+
+
+/*Navbar Media*/
 @media(min-width:992px){
     .dropdown>.dropdown-menu{
         visibility: hidden;
@@ -77,5 +107,35 @@ img{
         color: white;
         background-color: black;
     }
+}
+
+
+/*SlideShow*/
+.c-item{
+    height: 480px;
+}
+
+.c-img{
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.45);
+
+}
+
+/*SlideShow Buttons*/
+.btn-primary {
+    background-color: #007bff; 
+    border-color: #007bff;
+    font-size: 1.2rem; 
+    font-weight: 600;
+    border-radius: 30px; 
+    padding: 12px 25px; 
+    transition: all 0.3s ease; 
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover for interaction feedback */
+    border-color: #0056b3;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4); /* Soft shadow for depth */
 }
 
