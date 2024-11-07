@@ -1,1 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins%3Awght%40400%3B500&display=swap%27%29%3B')
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #f3f3f3;
+}
+
+img{
+    max-width: 150px;
+    width: 100%;
+}
+
+.nav-link{
+    font-weight: 600;
+    color: black;
+}
+
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+
+.dropdown>.dropdown-menu{
+    background-color: white;
+    border: none;
+    border-radius: 0;
+}
+
+.lni-menu-hamburger-1{
+    font-size: 2rem;
+}
+
+/* Make the search input border and text black */
+.navbar .form-control {
+    color: black;
+    border-color: black;
+}
+
+/* Make the search button outline black */
+.navbar .btn-outline-primary {
+    color: black;
+    border-color: black;
+}
+
+/* Change the background color of the button on hover */
+.navbar .btn-outline-primary:hover {
+    color: white;
+    background-color: black;
+    border-color: black;
+}
+
+/* Make the basket icon and text black */
+.navbar .nav-link i, .navbar .nav-link {
+    color: black !important;
+}
+
+.navbar-nav .nav-item {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media(min-width:992px){
+    .dropdown>.dropdown-menu{
+        visibility: hidden;
+        opacity: 0;
+        top: 100%;
+        display: block;
+        transition: all 0.1 ease-out;
+    }
+
+    .dropdown:hover>.dropdown-menu{
+        padding: 20px 0;
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        transition: all 0.3 ease-in-out;
+    }
+    
+    .dropdown-item:hover{
+        color: white;
+        background-color: black;
+    }
+}
+

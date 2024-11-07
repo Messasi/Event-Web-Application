@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg py-4 py-lg-0 shadow">
+        <div class="container px-4">
+            <img src="Images/google logo.png" alt="Logo Image">
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#top-navbar" aria-controls="top-navbar">
+                <i class="lni lni-menu-hamburger-1"></i>
+            </button>
+            
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse" id="top-navbar">
+                <!-- Navigation Links -->
+                <ul class="navbar-nav ms-lg-auto p-4 p-lg-0">
+                    <li class="nav-item px-4">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item px-4 dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Music</a></li>
+                            <li><a class="dropdown-item" href="#">Sports</a></li>
+                            <li><a class="dropdown-item" href="#">NightLife</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item px-4">
+                        <a class="nav-link" href="#">Help</a>
+                    </li>
+                    <li class="nav-item px-4">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-basket"></i> Basket
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Search Bar aligned to the right -->
+                <form class="d-flex ms-auto" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+            </div> <!-- End collapse -->
+        </div> <!-- End container -->
+    </nav>
+    
+
+    <!--Slideshow-->
+    <div id="landingPage-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active c-item">
+            <img src="Images/Carousel Basketball Img.jpg" class="d-block w-100 c-img" alt="Slide 1">
+          </div>
+          <div class="carousel-item c-item">
+            <img src="Images/Carousel music Img.jpg" class="d-block w-100 c-img" alt="Slide 2">
+          </div>
+          <div class="carousel-item c-item">
+            <img src="Images/Carousel Nighout Img.jpg" class="d-block w-100 c-img" alt="slide 3">
+          </div>
+        </div>
+      </div>
+    
+    
+    <!--Javascript Link-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+</body>
+</html>
