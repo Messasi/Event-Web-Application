@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
 
-    <title>Document</title>
+    <title>Home</title>
 </head>
 <body>
     <!--Navbar-->
@@ -31,7 +31,7 @@
                 <!-- Navigation Links -->
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link px-3" href="#">Home</a>
+                        <a class="nav-link px-3" href="Home.html">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle px-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,7 +44,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3" href="#">Help</a>
+                        <a class="nav-link px-3" href="Help.html">Help</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link px-3" href="#">
@@ -59,28 +59,35 @@
                 
                 <!-- Search Bar -->
                 <form class="d-flex align-items-center ms-3 my-2 my-lg-0" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="border-radius: 20px;">
-                    <button class="btn btn-outline-primary" type="submit" style="border-radius: 20px;">Search</button>
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit">
+                            <i class="bi bi-search"></i> 
+                        </button>
+                    </div>
                 </form>
-            </div> <!-- End collapse -->
-        </div> <!-- End container -->
+            </div> 
+        </div> 
     </nav>
 
     
 
-    <!--Slideshow-->
+    
     <!-- Slideshow -->
+    <!--3000 = 3 secs time interval-->
     <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-        <div class="carousel-indicators">
+        <div class="carousel-indicators"> <!--Linking the indicators with the slideshow images-->
             <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
 
+        <!--Create the slideshows in themselves -->
         <div class="carousel-inner">
             <div class="carousel-item active c-item">
                 <img src="Images/Nightclub img SlideShow.jpg" class="d-block w-100 c-img" alt="Slide 1">
                 <div class="carousel-caption top-0 mt-4">
+                    <!--Inline bootstrap styling for the text-->
                     <p class="mt-5 fs-3 text-uppercase">Experience the Night Like Never Before!</p>
                     <h1 class="display-1 fw-bolder text-capitalize">Exclusive Club Nights Await</h1>
                     <button class="btn btn-primary px-4 py-2 fs-5 mt-5">Join the Vibe!</button>
@@ -99,13 +106,13 @@
             <div class="carousel-item c-item">
                 <img src="Images/Diner SlideShow.jpg" class="d-block w-100 c-img" alt="Slide 3">
                 <div class="carousel-caption top-0 mt-4">
-                    <p class="text-uppercase fs-3 mt-5">Destination activities</p>
-                    <p class="display-1 fw-bolder text-capitalize">Go glacier hiking</p>
+                    <p class="text-uppercase fs-3 mt-5">Step Into Elegance and Sophistication</p>
+                    <p class="display-1 fw-bolder text-capitalize">Enjoyable Evenings </p>
                     <button class="btn btn-primary px-4 py-2 fs-5 mt-5" data-bs-toggle="modal"
-                        data-bs-target="#booking-modal">Book a tour</button>
+                        data-bs-target="#booking-modal">Secure Your Spot!</button>
                 </div>
             </div>
-        </div>
+        </div> <!--The different indicators buttons when pressed will go to what tab in slideshow -->
         <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -115,10 +122,16 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+
+
     
     
     <!--Javascript Link-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    
+   <!-- Popper.js (required for Bootstrap dropdowns) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap JavaScript bundle (includes Bootstrap's JavaScript) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

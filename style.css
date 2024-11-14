@@ -4,64 +4,16 @@ body{
     background: #f3f3f3;
 }
 
-/*Slideshow image settings*/
+/*Navbar Settings*/w
 img{
     max-width: 150px;
     width: 100%;
 }
-
-
-
-
-/*Navbar Settings*/
-
+/* Navbar Settings */
 .navbar {
     padding-top: 5px;
     padding-bottom: 5px;
-    height: 60px; /* Reduce height */
-}
-
-.nav-link{
-    font-weight: 525;
-    color: black;
-}
-
-.navbar-toggler:focus{
-    box-shadow: none;
-}
-
-.dropdown>.dropdown-menu{
-    background-color: white;
-    border: none;
-    border-radius: 0;
-}
-
-.lni-menu-hamburger-1{
-    font-size: 2rem;
-}
-
-/* Make the search input border and text black */
-.navbar .form-control {
-    color: black;
-    border-color: black;
-}
-
-/* Make the search button outline black */
-.navbar .btn-outline-primary {
-    color: black;
-    border-color: black;
-}
-
-/* Change the background color of the button on hover */
-.navbar .btn-outline-primary:hover {
-    color: white;
-    background-color: black;
-    border-color: black;
-}
-
-/* Make the basket icon and text black */
-.navbar .nav-link i{
-    color: #5f92f8 !important;
+    height: 60px;
 }
 
 .navbar-nav .nav-item {
@@ -69,52 +21,99 @@ img{
     padding-right: 15px;
 }
 
-.nav-link:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Adjust the color and opacity as desired */
-    color: black; /* Optional: Keep text color black */
-    border-radius: 4px; /* Optional: Slight rounding to match design */
+/* Search Bar Styling */
+.navbar .input-group {
+    width: 250px; /* Adjust width as needed */
+    max-width: 100%;
+    position: relative;
 }
 
-.nav-logo{
+.navbar .form-control {
+    color: black;
+    border: 1px solid rgb(151, 151, 151);
+    height: 40px;
+    border-radius: 20px; /* Rounded corners */
+    padding-right: 40px; /* Space for the search icon */
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+/* Search icon styling */
+.navbar .btn-outline-primary {
+    position: absolute;
+    right: 10px; /* Adjust for positioning */
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: #000000; /* Default icon color */
+    pointer-events: none; /* Keeps the icon from being affected by input focus */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Shadow and dark icon color on hover */
+.navbar .input-group:hover .form-control {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+.navbar .input-group:hover .btn-outline-primary {
+    color: #0056b3; /* Darker color on hover */
+}
+
+/* Focus shadow effect */
+.navbar .form-control:focus {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Stronger shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Logo and Navbar Link Styling */
+.nav-logo {
     font-family: "Pacifico", sans-serif;
-    font-weight: 400; /* Bolder weight for a more professional look */
-    font-size: 1.5rem; /* Adjust size as needed for your design */
-    color: #5f92f8; /* Dark color for readability and elegance */
-    text-transform: up; /* Makes the logo look bold and professional */
-    letter-spacing: 0.05em; /* Adds spacing between letters for readability */
-    text-decoration: none
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #5f92f8;
+    letter-spacing: 0.05em;
+    text-decoration: none;
 }
 
-/*Slideshow Media*/
-@media(min-width:992px){
-    .dropdown>.dropdown-menu{
+.nav-link {
+    font-weight: 525;
+    color: black;
+}
+
+.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: black;
+    border-radius: 4px;
+}
+
+/* Dropdown Styling */
+.dropdown>.dropdown-menu {
+    background-color: white;
+    border: none;
+    border-radius: 0;
+}
+
+
+@media(min-width:992px) {
+    .dropdown>.dropdown-menu {
         visibility: hidden;
         opacity: 0;
         top: 100%;
         display: block;
-        transition: all 0.1 ease-out;
+        transition: all 0.1s ease-out;
     }
-
-    .dropdown:hover>.dropdown-menu{
+    .dropdown:hover>.dropdown-menu {
         padding: 20px 0;
         display: block;
         visibility: visible;
         opacity: 1;
-        transition: all 0.3 ease-in-out;
+        transition: all 0.3s ease-in-out;
     }
-    
-    .dropdown-item:hover{
+    .dropdown-item:hover {
         color: white;
         background-color: black;
     }
 }
-
-
-
-
-
-
-/*SlideShow*/
 
 .c-item{
     height: 480px;
@@ -127,7 +126,6 @@ img{
 
 }
 
-/*SlideShow Buttons*/
 .btn-primary {
     background-color: #3a8ae0; 
     border-color: #007bff;
@@ -144,3 +142,27 @@ img{
     box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4); 
 }
 
+
+
+.help-card {
+    width: 100%;
+    height: 250px; /* Adjust height to make it more square */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px; /* Rounded corners */
+    transition: box-shadow 0.3s ease; /* Smooth shadow effect */
+  }
+  
+  .help-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+  }
+  
+  .help-card .card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
