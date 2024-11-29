@@ -1,168 +1,322 @@
 /*Full page settings*/
 body{
-    font-family: 'Helvetica', sans-serif;
-    background: #f3f3f3;
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
 }
 
-/*Navbar Settings*/w
-img{
-    max-width: 150px;
-    width: 100%;
+/*Adding Custom Fonts*/
+@font-face {
+  font-family: Junction-Light;
+  src: url(Fonts/Junction-light.otf);
 }
-/* Navbar Settings */
+
+@font-face {
+  font-family: Junction-Regular;
+  src: url(Fonts/Junction-regular.otf);
+}
+
+@font-face {
+  font-family: Junction-Bold;
+  src: url(Fonts/Junction-bold.otf);
+}
+
+/* Navbar */
 .navbar {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    height: 60px;
+  background-color: white; 
+  padding: 0.6rem 1.5rem; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+  position: relative; 
 }
 
-.navbar-nav .nav-item {
-    padding-left: 15px;
-    padding-right: 15px;
+/* Logo Styling */
+.nav-logo {
+  color: rgb(37, 162, 235); /* Blue color for logo text */
+  font-size: 1.8rem; 
+  font-family: "Poppins", sans-serif; /* Different font for the logo */
+  text-decoration: none; 
+  font-weight: bold;
+}
+
+.nav-logo:hover {
+  text-decoration: none; 
+  opacity: 0.8; 
+}
+
+.nav-icon {
+  display: none;
+}
+
+.nav-text {
+  display: inline;
+}
+
+
+/* Dropdown Arrow */
+.navbar-nav .dropdown-toggle::after {
+  content: '';  /* psuedo element*/
+  font-size: 1rem; 
+  margin-left: 8px; 
+  transition: transform 0.3s ease;
+}
+
+.navbar-nav .dropdown-toggle[aria-expanded="true"]::after {  /* When the toggle class aria is set to true(expanded )*/
+  transform: rotate(180deg); /* Flip arrow when expanded */
+}
+
+/* Navbar Tab Indicator */
+.navbar-nav .nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: -4px; /* indicator below just below the link */
+  left: 0; /*indicator stat from the left of nav item*/
+  width: 0;
+  height: 2px;
+  background-color: rgb(37, 162, 235); 
+  transition: width 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.navbar-nav .nav-link:hover::before,
+.navbar-nav .nav-link.active::before {
+  width: 100%; /* Expand to full width */
+  opacity: 1; /* Make visible */
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+  position: relative;
+  color: black; 
+  font-size: 1rem; 
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+
+/* Dropdown Styling */
+.dropdown-menu {
+  border-radius: 0.5rem; /* Rounded edges for modern look */
+  border: 1px solid rgba(0, 0, 0, 0.1); 
 }
 
 /* Search Bar Styling */
-.navbar .input-group {
-    width: 250px; /* Adjust width as needed */
-    max-width: 100%;
-    position: relative;
-}
-
-.navbar .form-control {
-    color: black;
-    border: 1px solid rgb(151, 151, 151);
-    height: 40px;
-    border-radius: 20px; /* Rounded corners */
-    padding-right: 40px; /* Space for the search icon */
-    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
-}
-
-/* Search icon styling */
-.navbar .btn-outline-primary {
-    position: absolute;
-    right: 10px; /* Adjust for positioning */
-    top: 50%;
-    transform: translateY(-50%);
-    border: none;
-    background: transparent;
-    color: #000000; /* Default icon color */
-    pointer-events: none; /* Keeps the icon from being affected by input focus */
-    transition: color 0.3s ease; /* Smooth color transition */
-}
-
-/* Shadow and dark icon color on hover */
-.navbar .input-group:hover .form-control {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
-}
-
-.navbar .input-group:hover .btn-outline-primary {
-    color: #0056b3; /* Darker color on hover */
-}
-
-/* Focus shadow effect */
-.navbar .form-control:focus {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Stronger shadow on focus */
-    outline: none; /* Remove default outline */
-}
-
-/* Logo and Navbar Link Styling */
-.nav-logo {
-    font-family: "Pacifico", sans-serif;
-    font-weight: 400;
-    font-size: 1.5rem;
-    color: #5f92f8;
-    letter-spacing: 0.05em;
-    text-decoration: none;
-}
-
-.nav-link {
-    font-weight: 525;
-    color: black;
-}
-
-.nav-link:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    color: black;
-    border-radius: 4px;
-}
-
-/* Dropdown Styling */
-.dropdown>.dropdown-menu {
-    background-color: white;
-    border: none;
-    border-radius: 0;
+.form-control {
+  border: 2px solid #333333; /* Black border for search bar */
+  border-radius: 0.5rem; /* Slightly rounded edges */
+  padding: 0.3rem 1rem; 
 }
 
 
-@media(min-width:992px) {
-    .dropdown>.dropdown-menu {
-        visibility: hidden;
-        opacity: 0;
-        top: 100%;
-        display: block;
-        transition: all 0.1s ease-out;
-    }
-    .dropdown:hover>.dropdown-menu {
-        padding: 20px 0;
-        display: block;
-        visibility: visible;
-        opacity: 1;
-        transition: all 0.3s ease-in-out;
-    }
-    .dropdown-item:hover {
-        color: white;
-        background-color: black;
-    }
+/*Seach bar button settings*/
+.btn-outline-primary {
+  border-color: rgb(0, 0, 0) ; /* Black outline for button */
+  color: rgb(231, 231, 231); /* Black text for button */
+  background-color: rgb(0, 0, 0);
 }
 
+.btn-outline-primary:hover {
+  background-color: rgb(99, 99, 99) ; /*Dark Grey background on hover */
+  color: rgb(80, 80, 80) ; /* White text on hover */
+  border-color: rgb(221, 221, 221);
+}
+
+@media (min-width: 768px) {
+  .offcanvas {
+    width: 30%; 
+  }
+
+  
+}
+
+
+
+/* help Page CSS*/
+/* Help Section Container */
+.help-section {
+    text-align: center; 
+    background-image: url('Images/BG\ Help\ PG\ IMG.png'); /* Add the background image here */
+    background-size: cover; /* Makes the image cover the entire area */
+    background-position: center; 
+    padding: 70px 20px; 
+    min-height: 30vh;
+  }
+  
+  /* Header Text */
+  .help-header {
+    font-size: 4em; /* Adjusts the size of the header */
+    font-weight: 600;
+    color: #ffffff; 
+    margin-bottom: 40px; /* Adds spacing between header and search bar */
+  }
+  
+  /* Search Bar Styling */
+  .search-bar-container {
+    display: flex;
+    justify-content: center; /* Centers the search bar */
+    width: 100%; 
+  }
+  
+  .search-bar {
+    width: 50%; 
+    max-width: 600px; 
+    padding: 10px; 
+    border: none; 
+    border-radius: 5px; 
+  }
+
+  
+/*Accordian styling*/
+.accordion-item {
+  background-color: rgb(255, 255, 255); 
+  border: 2px solid #ddd;  
+}
+
+.accordion-body {
+  background-color: white; 
+  font-weight: normal;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.accordion-button {
+  background-color: rgb(255, 255, 255);
+  font-weight: bold;
+  padding: 1.4rem;      
+  font-size: 1.25rem;    /* Increase font size */
+  
+}
+
+.accordion-button:hover {
+  background-color: #e8e8e8; /* Dark gray background on hover */
+  color: rgb(0, 0, 0);              
+}
+
+
+.accordion-button:not(.collapsed) {
+  background-color: #e0e0e0; /* different shade when expanded */
+  color: black;
+}
+
+.accordion-button::after {
+  background-image:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='currentColor' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 1a.5.5 0 0 1 .5.5V7.5H14a.5.5 0 0 1 0 1H8.5v6a.5.5 0 0 1-1 0V8.5H1a.5.5 0 0 1 0-1h6.5V1.5A.5.5 0 0 1 8 1z'/%3E%3C/svg%3E");
+
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='currentColor' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8a.5.5 0 0 1 0-1h9a.5.5 0 0 1 0 1h-9z'/%3E%3C/svg%3E");
+
+}
+
+
+
+/*Home page*/
+/*Slideshow*/
+/*Slideshow Settings*/
 .c-item{
-    height: 480px;
+  height: 480px
 }
 
 .c-img{
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.4);
-
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.38);
 }
 
-.btn-primary {
-    background-color: #3a8ae0; 
-    border-color: #007bff;
-    font-size: 1.2rem; 
-    font-weight: 600;
-    border-radius: 30px; 
-    padding: 12px 25px; 
-    transition: all 0.3s ease; 
+/*Slideshow Button*/
+.btn-slideshow{
+  border-radius: 30px; /* Rounded corners */
+  background-color: blue;
+  color: white; 
+  font-weight: bold; 
+  text-transform: uppercase; 
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); 
+  border: none; 
+  transition: all 0.3s ease; 
 }
 
-.btn-primary:hover {
-    background-color: #0056b3; 
-    border-color: #0056b3;
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4); 
+.btn-slideshow:hover {
+  background: linear-gradient(30deg, blue, #2d8af3); /q
+  box-shadow: 0px 6px 20px rgba(87, 87, 87, 0.4); /* More pronounced shadow on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+  color: white;
+}
+
+/*Card Slider stlying*/
+
+.card_wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 
+.head_text{
+  font-family: "Poppins", sans-serif; 
+  font-size: 45px;
+}
 
-.help-card {
-    width: 100%;
-    height: 250px; /* Adjust height to make it more square */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border-radius: 10px; /* Rounded corners */
-    transition: box-shadow 0.3s ease; /* Smooth shadow effect */
+.head_para{
+  margin-top: 15px;
+}
+
+.card_box{
+  background: rgb(77, 17, 216);
+  border-radius: 10px;
+  margin-top: 40px;
+  transition: .3s;
+  margin-bottom: 40px;
+}
+
+.card_box:hover{
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+.card_text{
+  padding: 30px 20px 25px 20px;
+}
+
+.card_text h4{
+  font-size: 18px;
+  font-family: "Poppins", sans-serif; 
+  color: white;
+}
+
+.card_text p{
+  font-size: 14px;
+  line-height: 150%;
+  margin-top: 10px;
+  color: white;
+}
+
+/* Adjust carousel buttons */
+.slider_carousel .owl-prev, .slider_carousel .owl-next {
+  position: absolute; /* Position the buttons relative to the slider */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Correct alignment */
+  width: 40px;
+  height: 40px;
+  background: rgb(231, 228, 228) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.slider_carousel .owl-prev {
+  left: -50px; /* Place to the left of the carousel */
+}
+
+.slider_carousel .owl-next {
+  right: -50px; /* Place to the right of the carousel */
+}
+
+/* Hide buttons on smaller screens */
+@media (max-width: 768px) {
+  .slider_carousel .owl-prev, 
+  .slider_carousel .owl-next {
+    display: none; /* Remove buttons for smaller screens */
   }
-  
-  .help-card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow on hover */
-  }
-  
-  .help-card .card-body {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+}
