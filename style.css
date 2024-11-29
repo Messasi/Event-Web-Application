@@ -42,12 +42,25 @@ body{
   opacity: 0.8; 
 }
 
+
 .nav-icon {
-  display: none;
+  display: none; /* Hidden by default */
 }
 
 .nav-text {
-  display: inline;
+  display: inline; /* Visible by default */
+}
+
+/* Show icons and hide text on smaller screens */
+@media (max-width: 992px) { /* Matches Bootstrap's `lg` breakpoint */
+  .nav-text {
+    display: none !important; /* Hide text */
+  }
+  .nav-icon {
+    display: inline-block !important; /* Show icons */
+    font-size: 1.2rem; /* Adjust icon size for better visibility */
+    margin-left: 0.3rem;
+  }
 }
 
 
@@ -236,7 +249,7 @@ body{
 
 .btn-slideshow:hover {
   background: linear-gradient(30deg, blue, #2d8af3); /q
-  box-shadow: 0px 6px 20px rgba(87, 87, 87, 0.4); /* More pronounced shadow on hover */
+  box-shadow: 0px 6px 20px rgba(87, 87, 87, 0.4); 
   transform: translateY(-2px); /* Slight lift on hover */
   color: white;
 }
@@ -261,11 +274,13 @@ body{
 }
 
 .card_box{
-  background: rgb(77, 17, 216);
-  border-radius: 10px;
+  background: rgb(77, 77, 77);
+
+  border-radius: 6px; /* Rounded corners for the entire card */
   margin-top: 40px;
-  transition: .3s;
   margin-bottom: 40px;
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
 }
 
 .card_box:hover{
@@ -292,9 +307,9 @@ body{
 
 /* Adjust carousel buttons */
 .slider_carousel .owl-prev, .slider_carousel .owl-next {
-  position: absolute; /* Position the buttons relative to the slider */
+  position: absolute; 
   top: 50%; /* Center vertically */
-  transform: translateY(-50%); /* Correct alignment */
+  transform: translateY(-50%); 
   width: 40px;
   height: 40px;
   background: rgb(231, 228, 228) !important;
