@@ -1,26 +1,78 @@
-//Owl carousel js
 function slider_carouselInit() {
     $('.owl-carousel.slider_carousel').owlCarousel({
-        dots: false,
-        loop: true,
-        margin: 30,
-        stagePadding: 2,
-        autoplay: false,
-        nav: true,
-        navText: ["<i class='far fa-arrow-alt-circle-left'></i>","<i class='far fa-arrow-alt-circle-right'></i>"],
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            768: {
-                items: 2,
-            },
-            992: {
-                items: 5
-            }
+        dots: false, 
+        loop: true, // Enable infinite looping
+        margin: 30, 
+        stagePadding: 2, // Add padding around the stage
+        autoplay: true, // Enable autoplay
+        nav: true, // Enable navigation buttons
+        navText: ["<i class='far fa-arrow-alt-circle-left'></i>", "<i class='far fa-arrow-alt-circle-right'></i>"], 
+        autoplayTimeout: 3000, 
+        autoplayHoverPause: true, // Pause autoplay on hover
+        responsive: { // Define responsive behavior for different screen sizes
+            0: { items: 1 }, // 1 item on small screens
+            768: { items: 2 }, // 2 items on medium screens
+            992: { items: 5 } // 5 items on larger screens
         }
     });
 }
-slider_carouselInit();
+slider_carouselInit(); // Initialize the carousel
+
+
+(function() {
+    'use strict'
+    
+    // Login Form Validation
+    var loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(event) {
+            if (!loginForm.checkValidity()) { // Check if the login form is valid
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            loginForm.classList.add('was-validated'); // Add validation feedback class
+        }, false);
+    }
+
+    // Registration Form Validation
+    var registerForm = document.getElementById('registerForm');
+    if (registerForm) {
+        registerForm.addEventListener('submit', function(event) {
+            if (!registerForm.checkValidity()) { // Check if the registration form is valid
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
+            // Check password and confirm password
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+    
+            if (password !== confirmPassword) {
+                event.preventDefault();  // Prevent form submission
+                document.getElementById('confirmPassword').classList.add('is-invalid');  // Add invalid feedback
+                document.getElementById('confirmPassword').nextElementSibling.textContent = 'Passwords must match.';  // Update feedback message
+            }
+            
+            // Add validation feedback class for registration form
+            registerForm.classList.add('was-validated'); 
+        }, false);
+    }
+})();
+
+
+
+
+// Simple CAPTCHA validation 
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    const captchaInput = document.getElementById("captcha"); 
+    const captchaText = document.getElementById("captchaText").innerText; // Get generated CAPTCHA text
+
+    if (captchaInput.value !== captchaText) { 
+        event.preventDefault(); 
+        captchaInput.classList.add("is-invalid"); // Add error class to CAPTCHA input
+    }
+});
+
+
+
+
