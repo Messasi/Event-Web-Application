@@ -489,4 +489,78 @@ body{
   }
 }
 
-/*Nightlife screen*/
+/* General Section Styles */
+.section-header {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust the height for the header image */
+}
+
+.section-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the container without stretching */
+  filter: brightness(0.38);
+}
+
+.section-header h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 70px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Common Title Styles */
+.section-title h1 {
+  font-size: 2.8rem;
+  color: #333;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  margin: 80px 0;
+  text-align: center;
+}
+
+/* Event Cards Section */
+.section-cards .card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden; /* Ensures content doesn't spill out of the card */
+  text-align: left;
+}
+
+.section-cards .card img.card-img-top {
+  width: 100%; /* Ensure the image spans the width of the card */
+  height: 180px; /* Adjust height for consistency */
+  object-fit: cover; /* Prevent image stretching */
+  border-bottom: 1px solid #ddd; /* Optional: Add a border between the image and text */
+}
+
+.section-cards .card-body {
+  padding: 15px;
+}
+
+.section-cards .card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.section-cards .card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .section-header {
+    height: 300px; /* Adjust header height for smaller screens */
+  }
+
+  .section-header h1 {
+    font-size: 2rem; /* Reduce font size on small screens */
+  }
+}
