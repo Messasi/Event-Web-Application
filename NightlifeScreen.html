@@ -57,10 +57,35 @@ function myFunction(xml) {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  const searchForm = document.getElementById("searchForm");
+  const searchInput = document.getElementById("searchInput");
+  const cards = document.querySelectorAll(".card"); // Select all card elements
+  const noResults = document.getElementById("noResults");
+
+  searchForm.addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent page relad
+    const query = searchInput.value.toLowerCase().trim();
+
+    // Flag to track if any cards match
+    let hasResults = false;
+
+    // Loop through all cards
+    cards.forEach((card) => {
+      const cardText = card.textContent.toLowerCase(); // Get card's text content
+      if (cardText.includes(query)) {
+        card.style.display = "block"; // Show card if it matches
+        hasResults = true;
+      } else {
+        card.style.display = "none"; // Hide card if it doesn't match
+      }
+    });
+
+    
+  });
+});
+
       </script>
-
-
-
 </head>
 <body>
     <!-- Navbar -->
@@ -92,7 +117,7 @@ function myFunction(xml) {
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="MusicScreen.html">Music</a></li>
                   <li><a class="dropdown-item" href="SportsScreen.html">Sports</a></li>
-                  <li><a class="dropdown-item" href="NightlifeScreen.html">NightLife</a></li>
+                  <li><a class="dropdown-item active" href="NightlifeScreen.html">NightLife</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -116,9 +141,9 @@ function myFunction(xml) {
             </ul>
       
             <!-- Search Bar -->
-            <form class="d-flex align-items-center ms-3 my-2 my-lg-0" role="search">
+            <form id="searchForm" class="d-flex align-items-center ms-3 my-2 my-lg-0" role="search">
               <div class="input-group">
-                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                <input id="searchInput" class="form-control" type="search" placeholder="Search for events" aria-label="Search">
                 <button class="btn btn-outline-primary" type="submit">
                   <i class="bi bi-search"></i>
                 </button>
@@ -208,10 +233,9 @@ function myFunction(xml) {
             <div class="col">
                 <h4 class="pt-3 fw-bold">Categories</h4>
                 <ul class="list-unstyled py-3">
-                    <li><a href="#" class="text-decoration-none text-light">link</a></li>
-                    <li><a href="#" class="text-decoration-none text-light">link</a></li>
-                    <li><a href="#" class="text-decoration-none text-light">link</a></li>
-                    <li><a href="#" class="text-decoration-none text-light">link</a></li>
+                    <li><a href="MusicScreen.html" class="text-decoration-none text-light">Music</a></li>
+                    <li><a href="SportsScreen.html" class="text-decoration-none text-light">Sports</a></li>
+                    <li><a href="NightlifeScreen.html" class="text-decoration-none text-light">Nightclubs</a></li>
                 </ul>
             </div>
             <div class="col-6 col-lg-3 text-lg-end">

@@ -55,6 +55,34 @@ function populateMusicCards(xml) {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  const searchForm = document.getElementById("searchForm");
+  const searchInput = document.getElementById("searchInput");
+  const cards = document.querySelectorAll(".card"); // Select all card elements
+  const noResults = document.getElementById("noResults");
+
+  searchForm.addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent page relad
+    const query = searchInput.value.toLowerCase().trim();
+
+    // Flag to track if any cards match
+    let hasResults = false;
+
+    // Loop through all cards
+    cards.forEach((card) => {
+      const cardText = card.textContent.toLowerCase(); // Get card's text content
+      if (cardText.includes(query)) {
+        card.style.display = "block"; // Show card if it matches
+        hasResults = true;
+      } else {
+        card.style.display = "none"; // Hide card if it doesn't match
+      }
+    });
+
+    
+  });
+});
+
 </script>
 <body>
     <!-- Navbar -->
@@ -84,7 +112,7 @@ function populateMusicCards(xml) {
                   <span class="nav-icon"><i class="bi bi-grid"></i></span>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="MusicScreen.html">Music</a></li>
+                  <li><a class="dropdown-item active" href="MusicScreen.html">Music</a></li>
                   <li><a class="dropdown-item" href="SportsScreen.html">Sports</a></li>
                   <li><a class="dropdown-item" href="NightlifeScreen.html">NightLife</a></li>
                 </ul>
@@ -110,9 +138,9 @@ function populateMusicCards(xml) {
             </ul>
       
             <!-- Search Bar -->
-            <form class="d-flex align-items-center ms-3 my-2 my-lg-0" role="search">
+            <form id="searchForm" class="d-flex align-items-center ms-3 my-2 my-lg-0" role="search">
               <div class="input-group">
-                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                <input id="searchInput" class="form-control" type="search" placeholder="Search for events" aria-label="Search">
                 <button class="btn btn-outline-primary" type="submit">
                   <i class="bi bi-search"></i>
                 </button>
@@ -202,10 +230,9 @@ function populateMusicCards(xml) {
             <div class="col-6 col-lg-3 text-lg-end">
                 <h4 class="pt-3 fw-bold">Social Media</h4>
                 <div class="py-3">
-                    <a href="#" class="text-decoration-none text-light"><i class="bi bi-instagram fs-2 me-3"></i></a>
-                    <a href="#" class="text-decoration-none text-light"><i class="bi bi-facebook fs-2 me-3"></i></a>
-                    <a href="#" class="text-decoration-none text-light"><i class="bi bi-linkedin fs-2 me-3"></i></a>
-                    <a href="#" class="text-decoration-none text-light"><i class="bi bi-tiktok fs-2 "></i></a>
+                  <li><a href="MusicScreen.html" class="text-decoration-none text-light">Music</a></li>
+                  <li><a href="SportsScreen.html" class="text-decoration-none text-light">Sports</a></li>
+                  <li><a href="NightlifeScreen.html" class="text-decoration-none text-light">Nightclubs</a></li>
                 </div>
                 
             </div>
