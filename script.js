@@ -74,5 +74,61 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 });
 
 
+// Fetch and parse the XML file
+// Fetch and parse the XML file
+
+fetch('data/nightclub.xml')
+.then((response) => {
+    console.log('Response received:', response);
+    return response.text();
+  })
+
+.then((xmlText) => {
+  console.log('XML loaded:', xmlText);  // Log the raw XML to ensure it's being loaded
+  const parser = new DOMParser();
+  const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+  console.log('XML parsed:', xmlDoc);  // Log the parsed XML to see if it's correct
+  
+  const events = xmlDoc.getElementsByTagName('event');
+  const container = document.querySelector('.row.g-4');
+  // Loop through events to create cards (your existing code)
+  let cardsHTML = ''; // Initialize a string to hold the cards
+
+  // Loop through each event and generate a card
+  for (let i = 0; i < events.length; i++) {
+    const name = events[i].getElementsByTagName('name')[0].textContent;
+    const venue = events[i].getElementsByTagName('venue')[0].textContent;
+    const price = events[i].getElementsByTagName('price')[0].textContent;
+    const datetime = events[i].getElementsByTagName('datetime')[0].textContent;
+    const image = events[i].getElementsByTagName('image')[0].textContent;
+
+    // Create the card HTML
+    const cardHTML = `
+      <div class="col-12 col-md-4 mb-5">
+        <div class="card shadow-sm">
+          <img src="${image}" class="card-img-top" alt="${name}">
+          <div class="card-body">
+            <h5 class="card-title">${name}</h5>
+            <p class="card-text"><strong>Venue:</strong> ${venue}</p>
+            <p class="card-text"><strong>Date/Time:</strong> ${datetime}</p>
+            <p class="card-text"><strong>Price:</strong> ${price}</p>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Append the card to the cardsHTML string
+    cardsHTML += cardHTML;
+  }
+
+  // Update the container with all the cards at once
+  container.innerHTML = cardsHTML;
+})
+
+
+.catch((error) => {
+  console.error('Error fetching XML:', error);
+});
+
 
 
