@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<events>
+    <event>
+        <name>Night at the Disco</name>
+        <venue>Nottingham City Club</venue>
+        <price>£20</price>
+        <datetime>December 10, 2024 - 9:00 PM</datetime>
+        <image>Images/SubPages/nightclub/nightclub1.jpg</image>
+    </event>
+    <event>
+        <name>Electro Beats</name>
+        <venue>Electric Venue</venue>
+        <price>£25</price>
+        <datetime>December 15, 2024 - 10:00 PM</datetime>
+        <image>Images/SubPages/nightclub/nightclub2.jpg</image>
+    </event>
+    <event>
+        <name>Glow Party</name>
+        <venue>Glow Nightclub</venue>
+        <price>£15</price>
+        <datetime>December 20, 2024 - 8:00 PM</datetime>
+        <image>Images/SubPages/nightclub/nightclub3.jpg</image>
+    </event>
+</events>
+

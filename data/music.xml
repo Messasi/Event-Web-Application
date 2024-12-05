@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<musicEvents>
+  <event>
+    <name>Jazz Night</name>
+    <venue>The Jazz Club</venue>
+    <price>£25</price>
+    <datetime>2024-12-10</datetime>
+    <image>Images/SubPages/Music/jazzImg.jpg</image>
+  </event>
+  <event>
+    <name>Rock Fest</name>
+    <venue>Rock Arena</venue>
+    <price>£35</price>
+    <datetime>2024-12-12</datetime>
+    <image>Images/SubPages/Music/Rock.jpg</image>
+  </event>
+  <event>
+    <name>Classical Evening</name>
+    <venue>Concert Hall</venue>
+    <price>£40</price>
+    <datetime>2024-12-14</datetime>
+    <image>Images/SubPages/Music/classical.jpg</image>
+  </event>
+</musicEvents>

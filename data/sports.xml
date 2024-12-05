@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sportsEvents>
+  <event>
+    <title>Boxing Match</title>
+    <price>£20</price>
+    <date>2024-12-10</date>
+    <description>Watch thrilling boxing fight.</description>
+    <image>Images/SubPages/Sports/footballImg.jpg</image>
+  </event>
+  <event>
+    <title>Muy Thai Championship</title>
+    <price>£30</price>
+    <date>2024-12-15</date>
+    <description>Enjoy a Muy Thai championship.</description>
+    <image>Images/SubPages/Sports/boxingImg.jpg</image>
+  </event>
+  <event>
+    <title>Tennis Open</title>
+    <price>£50</price>
+    <date>2024-12-18</date>
+    <description>Experience world-class tennis action.</description>
+    <image>Images/SubPages/Sports/tennisImg.jpg</image>
+  </event>
+</sportsEvents>
+

@@ -1,0 +1,31 @@
+<events>
+    <event>
+        <image>Images/CardSliderImgs/pexels-abbykihano-431722.jpg</image>
+        <alt>Event 1</alt>
+        <title>Music Concert</title>
+        <description>Enjoy the best live music performances by top artists in the heart of the city.</description>
+        <price>£50</price>
+    </event>
+    <event>
+        <image>Images/CardSliderImgs/pexels-alxs-919734.jpg</image>
+        <alt>Event 2</alt>
+        <title>Comedy Show</title>
+        <description>Get ready to laugh out loud with the funniest comedians in town.</description>
+        <price>£30</price>
+    </event>
+    <event>
+        <image>Images/CardSliderImgs/pexels-bertellifotografia-2608517.jpg</image>
+        <alt>Event 3</alt>
+        <title>Art Exhibition</title>
+        <description>Discover contemporary art from emerging artists in a unique gallery setting.</description>
+        <price>£20</price>
+    </event>
+    <event>
+        <image>Images/CardSliderImgs/pexels-caleboquendo-3023317.jpg</image>
+        <alt>Event 4</alt>
+        <title>Theater Performance</title>
+        <description>A captivating live theater performance that you won't forget.</description>
+        <price>£40</price>
+    </event>
+    <!-- Add more events here -->
+</events>
