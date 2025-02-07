@@ -1,0 +1,17 @@
+@font-face {
+    font-family: Junction-Regular;
+    src: url(Junction-regular.otf);
+}
+@font-face {
+    font-family: Junction-Light;
+    src: url(Junction-light.otf);
+}
+@font-face {
+    font-family: Junction-Bold;
+    src: url(Junction-bold.otf);
+}
+
+h1{
+    font-family: Junction-Bold;
+    
+}
