@@ -19,167 +19,190 @@
      <!-- Navbar -->
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg py-3 shadow-sm">
-        <div class="container px-4">
+      <div class="container px-4">
           <!-- Logo -->
           <a href="Home.html" class="nav-logo">NationsTickets</a>
-      
+  
           <!-- Mobile Menu Toggle Button -->
           <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="lni lni-menu-hamburger-1"></i>
+              <i class="lni lni-menu-hamburger-1"></i>
           </button>
-      
+  
           <!-- Navbar Content -->
           <div class="collapse navbar-collapse" id="top-navbar">
-            <!-- Navigation Links -->
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link px-3" href="Home.html">
-                  <span class="nav-text d-none d-lg-inline">Home</span>
-                  <span class="nav-icon"><i class="bi bi-house-door"></i></span>
-                </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle px-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <span class="nav-text d-none d-lg-inline">Categories</span>
-                  <span class="nav-icon"><i class="bi bi-grid"></i></span>
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="MusicScreen.html">Music</a></li>
-                    <li><a class="dropdown-item" href="SportsScreen.html">Sports</a></li>
-                    <li><a class="dropdown-item" href="NightlifeScreen.html">NightLife</a></li>
-                  </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link px-3" href="Help.html">
-                  <span class="nav-text d-none d-lg-inline">Help</span>
-                  <span class="nav-icon"><i class="bi bi-question-circle"></i></span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link px-3" href="Basket.html">
-                  <span class="nav-text d-none d-lg-inline">Basket</span>
-                  <span class="nav-icon"><i class="bi bi-basket"></i></span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link px-3" href="loginRegister.html">
-                  <span class="nav-text d-none d-lg-inline">Login/Register</span>
-                  <span class="nav-icon"><i class="bi bi-person"></i></span>
-                </a>
-              </li>
-            </ul>
-      
-            <!-- Search Bar -->
-            <form class="d-flex align-items-center ms-3 my-2 my-lg-0" role="search">
-              <div class="input-group">
-                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-primary" type="submit">
-                  <i class="bi bi-search"></i>
-                </button>
-              </div>
-            </form>
+              <!-- Navigation Links -->
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <!-- Home Link -->
+                  <li class="nav-item">
+                      <a class="nav-link px-3 active" href="Home.html">
+                          <span class="nav-icon d-lg-none"><i class="bi bi-house-door"></i></span>
+                          <span class="nav-text d-none d-lg-inline">Find Events</span>
+                      </a>
+                  </li>
+  
+                  <!-- Categories Dropdown -->
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle px-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <span class="nav-icon d-lg-none"><i class="bi bi-grid"></i></span>
+                          <span class="nav-text d-none d-lg-inline">Categories</span>
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="MusicScreen.html">Music</a></li>
+                          <li><a class="dropdown-item" href="SportsScreen.html">Sports</a></li>
+                          <li><a class="dropdown-item" href="NightlifeScreen.html">NightLife</a></li>
+                      </ul>
+                  </li>
+  
+                  <!-- Help Link -->
+                  <li class="nav-item">
+                      <a class="nav-link px-3" href="Help.html">
+                          <span class="nav-icon d-lg-none"><i class="bi bi-question-circle"></i></span>
+                          <span class="nav-text d-none d-lg-inline">Help</span>
+                      </a>
+                  </li>
+              </ul>
+  
+              <!-- Icon Navigation -->
+              <ul class="navbar-nav icon-nav mb-2 mb-lg-0">
+                  <!-- Wishlist Link -->
+                  <li class="nav-item nav-item-icon-left">
+                      <a class="nav-link px-3" href="Wishlist.html">
+                          <span class="nav-icon"><i class="bi bi-heart"></i></span>
+                      </a>
+                  </li>
+  
+                  <!-- Cart Link -->
+                  <li class="nav-item nav-item-icon-left">
+                      <a class="nav-link px-3" href="Cart.html">
+                          <span class="nav-icon"><i class="bi bi-cart"></i></span>
+                      </a>
+                  </li>
+  
+                  <!-- Profile Link -->
+                  <li class="nav-item nav-item-icon-left">
+                      <a class="nav-link px-3" href="Profile.html">
+                          <span class="nav-icon"><i class="bi bi-person"></i></span>
+                      </a>
+                  </li>
+              </ul>
+  
+              <!-- Search Form -->
+              <form id="searchForm" class="d-flex align-items-center ms-3 my-2 my-lg-0" role="search">
+                  <div class="input-group w-100 w-lg-auto">
+                      <input id="searchInput" class="form-control" type="search" placeholder="Search for events" aria-label="Search">
+                      <button class="btn btn-outline-primary" type="submit">
+                          <i class="bi bi-search"></i>
+                      </button>
+                  </div>
+              </form>
           </div>
-        </div>
-      </nav>
+      </div>
+  </nav>
 
     <!--Registration page-->
-    <div class="container d-flex justify-content-center align-items-center min-vh-100">
-        <div class="row border rounded-5 box-area shadow bg-white">
-            <!-- Left Section -->
-            <div class="col-md-6 left-box">
-                <div class="featured-image mb-3">
-                    <img src="Images/Register/pexels-chuck-2834917.jpg" class="img-fluid" alt="Basketball dunk img">
-                </div>
-                <p class="text-white fs-3 fw-bold">Join Us</p>
-                <small class="text-white text-wrap text-center">
-                    Register today to enjoy all the benefits of our services.
-                </small>
+    <!-- Registration page -->
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="row border rounded-5 box-area shadow bg-white">
+        <!-- Left Section -->
+        <div class="col-md-6 left-box">
+            <div class="featured-image mb-3">
+                <img src="Images/Register/pexels-chuck-2834917.jpg" class="img-fluid" alt="Basketball dunk img">
             </div>
-    
-            <!-- Right Section -->
-            <div class="col-md-6 right-box">
-                <div class="header-text text-center mb-4">
-                    <h2 class="text-primary">Create Account</h2>
-                    <p>Fill in the fields below to sign up.</p>
-                </div>
-                <form id="registerForm">
-                    <!-- Email -->
-                    <div class="mb-3">
-                        <input type="email" class="form-control form-control-lg bg-light fs-6" id="email" placeholder="Email Address" required>
-                        <div class="invalid-feedback">Please enter a valid email address.</div>
-                    </div>
-                    <!-- Password -->
-                    <div class="mb-3">
-                        <input type="password" class="form-control form-control-lg bg-light fs-6" id="password" placeholder="Password" minlength="6" required>
-                        <div class="invalid-feedback">Password must be at least 6 characters long.</div>
-                    </div>
-                    <!-- Confirm Password -->
-                    <div class="mb-3">
-                        <input type="password" class="form-control form-control-lg bg-light fs-6" id="confirmPassword" placeholder="Confirm Password" required>
-                        <div class="invalid-feedback">Passwords must match.</div>
-                    </div>
-                    <!-- Phone Number -->
-                    <div class="mb-3">
-                        <input type="tel" class="form-control form-control-lg bg-light fs-6" id="phone" placeholder="Phone Number" pattern="^\d{10,15}$" required>
-                        <div class="invalid-feedback">Please enter a valid phone number.</div>
-                    </div>
-                    <!-- Address -->
-                    <div class="mb-3">
-                        <input type="text" class="form-control form-control-lg bg-light fs-6" id="address" placeholder="Address" required>
-                        <div class="invalid-feedback">Please enter your address.</div>
-                    </div>
-                    <!-- Apartment/House Number -->
-                    <div class="mb-3">
-                        <input type="text" class="form-control form-control-lg bg-light fs-6" id="apartmentNumber" placeholder="Apartment/House Number" required>
-                        <div class="invalid-feedback">Please enter your apartment or house number.</div>
-                    </div>
-                    <!-- Post code -->
-                    <div class="mb-3">
-                        <input type="text" class="form-control form-control-lg bg-light fs-6" id="postalCode" placeholder="Postal Code" pattern="^[A-Z]{1,2}\d[A-Z\d]? \d[A-Z]{2}$" required>
-                        <div class="invalid-feedback">Please enter a valid postal code.</div>
-                    </div>
-                    <!-- Country -->
-                    <div class="mb-3">
-                        <select class="form-select form-control-lg bg-light fs-6" id="country" required>
-                            <option value="" disabled selected>Select Your Country</option>
-                            <option value="US">United States</option>
-                            <option value="GB">United Kingdom</option>
-                            <option value="CA">Canada</option>
-                            <option value="AU">Australia</option>
-                        </select>
-                        <div class="invalid-feedback">Please select your country.</div>
-                    </div>
-                    <!-- Accept Terms -->
-                    <div class="form-check mb-4">
-                        <input type="checkbox" class="form-check-input" id="acceptTerms" required>
-                        <label class="form-check-label" for="acceptTerms">
-                            I accept the <a href="#" class="text-primary">Terms and Conditions</a>
-                        </label>
-                        <div class="invalid-feedback">You must accept the terms and conditions to proceed.</div>
-                    </div>
-                    <!-- Submit Button -->
-                    <div class="mb-3">
-                        <button type="submit" class="btn btn-lg btn-primary w-100 fs-6">Register</button>
-                    </div>
-                    <!-- Third-Party Signup -->
-                    <div class="sign-in-buttons">
-                        <div class="input-group mb-3">
-                            <button type="button" class="btn btn-lg btn-outline-primary w-100 fs-6 d-flex align-items-center justify-content-center">
-                                <img src="Images/Login Form/Google logo.png" class="me-2" style="width: 20px;" alt="Google">
-                                Sign up with Google
-                            </button>
-                        </div>
-                        <div class="input-group mb-3">
-                            <button type="button" class="btn btn-lg btn-outline-dark w-100 fs-6 d-flex align-items-center justify-content-center">
-                                <img src="Images/Login Form/apple logo login form.png" class="me-2" style="width: 20px;" alt="Apple">
-                                Sign up with Apple
-                            </button>
-                        </div>
-                    </div>
-                </form>
+            <p class="text-white fs-3 fw-bold">Join Us</p>
+            <small class="text-white text-wrap text-center">
+                Register today to enjoy all the benefits of our services.
+            </small>
+        </div>
+
+        <!-- Right Section -->
+        <div class="col-md-6 right-box">
+            <div class="header-text text-center mb-4">
+                <h2 class="text-primary">Create Account</h2>
+                <p>Fill in the fields below to sign up.</p>
             </div>
+            <form id="registerForm">
+                <!-- Email -->
+                <div class="mb-3">
+                    <input type="email" class="form-control form-control-lg bg-light fs-6" id="email" placeholder="Email Address" required>
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+                <!-- Password -->
+                <div class="mb-3">
+                    <input type="password" class="form-control form-control-lg bg-light fs-6" id="password" placeholder="Password" minlength="6" required>
+                    <div class="invalid-feedback">Password must be at least 6 characters long.</div>
+                </div>
+                <!-- Confirm Password -->
+                <div class="mb-3">
+                    <input type="password" class="form-control form-control-lg bg-light fs-6" id="confirmPassword" placeholder="Confirm Password" required>
+                    <div class="invalid-feedback">Passwords must match.</div>
+                </div>
+                <!-- Date of Birth -->
+                <div class="mb-3">
+                    <input type="date" class="form-control form-control-lg bg-light fs-6" id="dob" required>
+                    <div class="invalid-feedback">Please enter your date of birth.</div>
+                </div>
+                <!-- Phone Number -->
+                <div class="mb-3">
+                    <input type="tel" class="form-control form-control-lg bg-light fs-6" id="phone" placeholder="Phone Number" pattern="^\d{10,15}$" required>
+                    <div class="invalid-feedback">Please enter a valid phone number.</div>
+                </div>
+                <!-- Address -->
+                <div class="mb-3">
+                    <input type="text" class="form-control form-control-lg bg-light fs-6" id="address" placeholder="Address" required>
+                    <div class="invalid-feedback">Please enter your address.</div>
+                </div>
+                <!-- Apartment/House Number -->
+                <div class="mb-3">
+                    <input type="text" class="form-control form-control-lg bg-light fs-6" id="apartmentNumber" placeholder="Apartment/House Number" required>
+                    <div class="invalid-feedback">Please enter your apartment or house number.</div>
+                </div>
+                <!-- Post code -->
+                <div class="mb-3">
+                    <input type="text" class="form-control form-control-lg bg-light fs-6" id="postalCode" placeholder="Postal Code" pattern="^[A-Z]{1,2}\d[A-Z\d]? \d[A-Z]{2}$" required>
+                    <div class="invalid-feedback">Please enter a valid postal code.</div>
+                </div>
+                <!-- Country -->
+                <div class="mb-3">
+                    <select class="form-select form-control-lg bg-light fs-6" id="country" required>
+                        <option value="" disabled selected>Select Your Country</option>
+                        <option value="US">United States</option>
+                        <option value="GB">United Kingdom</option>
+                        <option value="CA">Canada</option>
+                        <option value="AU">Australia</option>
+                    </select>
+                    <div class="invalid-feedback">Please select your country.</div>
+                </div>
+                <!-- Accept Terms -->
+                <div class="form-check mb-4">
+                    <input type="checkbox" class="form-check-input" id="acceptTerms" required>
+                    <label class="form-check-label" for="acceptTerms">
+                        I accept the <a href="#" class="text-primary">Terms and Conditions</a>
+                    </label>
+                    <div class="invalid-feedback">You must accept the terms and conditions to proceed.</div>
+                </div>
+                <!-- Submit Button -->
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-lg btn-primary w-100 fs-6">Register</button>
+                </div>
+                <!-- Third-Party Signup -->
+                <div class="sign-in-buttons">
+                    <div class="input-group mb-3">
+                        <button type="button" class="btn btn-lg btn-outline-primary w-100 fs-6 d-flex align-items-center justify-content-center">
+                            <img src="Images/Login Form/Google logo.png" class="me-2" style="width: 20px;" alt="Google">
+                            Sign up with Google
+                        </button>
+                    </div>
+                    <div class="input-group mb-3">
+                        <button type="button" class="btn btn-lg btn-outline-dark w-100 fs-6 d-flex align-items-center justify-content-center">
+                            <img src="Images/Login Form/apple logo login form.png" class="me-2" style="width: 20px;" alt="Apple">
+                            Sign up with Apple
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 
     <!--Footer-->
     <footer class="bg-dark text-light py-4">

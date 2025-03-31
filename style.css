@@ -20,29 +20,82 @@ body{
   src: url(Fonts/Junction-bold.otf);
 }
 
+//* Full page settings */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+}
+
+/* Adding Custom Fonts */
+@font-face {
+  font-family: Junction-Light;
+  src: url(Fonts/Junction-light.otf);
+}
+
+@font-face {
+  font-family: Junction-Regular;
+  src: url(Fonts/Junction-regular.otf);
+}
+
+@font-face {
+  font-family: Junction-Bold;
+  src: url(Fonts/Junction-bold.otf);
+}
+
 /* Navbar */
 .navbar {
-  background-color: white; 
-  padding: 0.6rem 1.5rem; 
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
-  position: relative; 
+  background-color: white;
+  padding: 0.6rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 /* Logo Styling */
 .nav-logo {
   color: rgb(37, 162, 235); /* Blue color for logo text */
-  font-size: 1.8rem; 
+  font-size: 1.8rem;
   font-family: "Poppins", sans-serif; /* Different font for the logo */
-  text-decoration: none; 
+  text-decoration: none;
   font-weight: bold;
+  padding-right: 30px;
 }
 
 .nav-logo:hover {
-  text-decoration: none; 
-  opacity: 0.8; 
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+/* Icons to the Left for Specific Tabs */
+.nav-item-icon-left .nav-link {
+  display: flex; /* Use flexbox for icon and text alignment */
+  align-items: center; /* Vertically center-align icon and text */
+  gap: 0.5rem; /* Add space between the icon and text */
+}
+
+.nav-item-icon-left .nav-icon {
+  display: inline-block; /* Ensure the icon is always visible */
+  font-size: 1.2rem; /* Adjust icon size */
+  color: inherit; /* Match the link color */
+}
+
+.nav-item-icon-left .nav-text {
+  display: inline; /* Keep text inline with icon */
+  font-size: 0.9rem; /* Adjust text size for readability */
+}
+
+/* Navbar Items - Hide Text, Show Icons on Small Screens */
+.nav-item .nav-text {
+  display: none; /* Hide text by default */
+}
+
+.nav-item .nav-icon {
+  font-size: 1.4rem; /* Adjust icon size */
 }
 
 
+
+
+/* Default Navbar Styling */
 .nav-icon {
   display: none; /* Hidden by default */
 }
@@ -52,27 +105,38 @@ body{
 }
 
 /* Show icons and hide text on smaller screens */
-@media (max-width: 992px) { /* Matches Bootstrap's `lg` breakpoint */
+@media (max-width: 992px) {
   .nav-text {
-    display: none !important; /* Hide text */
+      display: none !important; /* Hide text */
   }
+
   .nav-icon {
-    display: inline-block !important; /* Show icons */
-    font-size: 1.2rem; /* Adjust icon size for better visibility */
-    margin-left: 0.3rem;
+      display: inline-block !important; /* Show icons */
+      font-size: 1.4rem; /* Adjust icon size for better visibility */
+      margin-left: 0.2rem;
   }
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: flex-start; /* Align links to the left */
+  gap: 0.5rem; /* Space between nav items */
+}
+
+.navbar-nav .nav-item {
+  margin-right: 0.5rem; /* Space between help and icons */
 }
 
 
 /* Dropdown Arrow */
 .navbar-nav .dropdown-toggle::after {
-  content: '';  /* psuedo element*/
-  font-size: 1rem; 
-  margin-left: 8px; 
+  content: ''; /* psuedo element */
+  font-size: 1rem;
+  margin-left: 8px;
   transition: transform 0.3s ease;
 }
 
-.navbar-nav .dropdown-toggle[aria-expanded="true"]::after {  /* When the toggle class aria is set to true(expanded )*/
+.navbar-nav .dropdown-toggle[aria-expanded="true"]::after {
   transform: rotate(180deg); /* Flip arrow when expanded */
 }
 
@@ -80,11 +144,11 @@ body{
 .navbar-nav .nav-link::before {
   content: '';
   position: absolute;
-  bottom: -4px; /* indicator below just below the link */
-  left: 0; /*indicator stat from the left of nav item*/
+  bottom: -4px; /* Indicator just below the link */
+  left: 0; /* Indicator starts from the left of nav item */
   width: 0;
   height: 2px;
-  background-color: rgb(37, 162, 235); 
+  background-color: rgb(37, 162, 235);
   transition: width 0.3s ease, opacity 0.3s ease;
   opacity: 0;
 }
@@ -98,47 +162,46 @@ body{
 /* Navbar Links */
 .navbar-nav .nav-link {
   position: relative;
-  color: black; 
-  font-size: 1rem; 
+  color: black;
+  font-size: 1rem;
   padding: 0.5rem 1rem;
   text-decoration: none;
   font-weight: 500;
 }
 
-
 /* Dropdown Styling */
 .dropdown-menu {
   border-radius: 0.5rem; /* Rounded edges for modern look */
-  border: 1px solid rgba(0, 0, 0, 0.1); 
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Search Bar Styling */
 .form-control {
   border: 2px solid #333333; /* Black border for search bar */
   border-radius: 0.5rem; /* Slightly rounded edges */
-  padding: 0.3rem 1rem; 
+  padding: 0.3rem 1rem;
 }
 
-
-/*Seach bar button settings*/
+/* Search bar button settings */
 .btn-outline-primary {
-  border-color: rgb(0, 0, 0) ; /* Black outline for button */
+  border-color: rgb(0, 0, 0); /* Black outline for button */
   color: rgb(231, 231, 231); /* Black text for button */
   background-color: rgb(0, 0, 0);
 }
 
 .btn-outline-primary:hover {
-  background-color: rgb(99, 99, 99) ; /*Dark Grey background on hover */
-  color: rgb(80, 80, 80) ; /* White text on hover */
+  background-color: rgb(99, 99, 99); /* Dark Grey background on hover */
+  color: rgb(80, 80, 80); /* White text on hover */
   border-color: rgb(221, 221, 221);
 }
 
+
 @media (min-width: 768px) {
   .offcanvas {
-    width: 30%; 
+      width: 30%;
   }
 
-  
+
 }
 
 
@@ -552,6 +615,50 @@ body{
 .section-cards .card-text {
   font-size: 1rem;
   color: #555;
+}
+
+/* Heart Icon */
+.favorite-heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white; /* Default white background */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Heart Icon */
+.favorite-heart i {
+  font-size: 20px;
+  color: black; /* Default black outline */
+  transition: color 0.3s ease-in-out;
+}
+
+/* Active State (Clicked) */
+.favorite-heart.active {
+  background-color: red; /* Turns red */
+}
+
+.favorite-heart.active i {
+  color: white; /* Turns heart white inside red background */
+}
+/* Make the whole card clickable */
+.card {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.03);
 }
 
 /* Responsive Adjustments */

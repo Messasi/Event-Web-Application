@@ -74,6 +74,33 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 });
 
 
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const hearts = document.querySelectorAll(".favorite-heart");
+  
+    hearts.forEach((heart) => {
+      heart.addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevents card click
+        event.preventDefault();  // Stops default link behavior if inside <a>
+  
+        this.classList.toggle("active");
+        const icon = this.querySelector("i");
+  
+        if (this.classList.contains("active")) {
+          icon.classList.remove("fa-regular");
+          icon.classList.add("fa-solid"); // Solid heart
+        } else {
+          icon.classList.remove("fa-solid");
+          icon.classList.add("fa-regular"); // Outline heart
+        }
+  
+        // Placeholder event (replace this later)
+        console.log("Favorite toggled!");
+      });
+    });
+  });
+  
 // Fetch and parse the XML file
 // Fetch and parse the XML file
 // Wait for the DOM to load
