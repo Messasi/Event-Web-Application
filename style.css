@@ -671,3 +671,24 @@ body {
     font-size: 2rem; /* Reduce font size on small screens */
   }
 }
+
+.horizontal-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 400px;
+  margin-bottom: 10px;
+}
+
+.horizontal-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
+}
+
+.horizontal-card .card-body {
+  padding: 10px;
+}
