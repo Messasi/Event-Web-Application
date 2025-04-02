@@ -53,15 +53,15 @@ session_start();
                           <span class="nav-text d-none d-lg-inline">Categories</span>
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item" href="MusicScreen.html">Music</a></li>
-                          <li><a class="dropdown-item" href="SportsScreen.html">Sports</a></li>
-                          <li><a class="dropdown-item" href="NightlifeScreen.html">NightLife</a></li>
+                          <li><a class="dropdown-item" href="MusicScreen.php">Music</a></li>
+                          <li><a class="dropdown-item" href="SportsScreen.php">Sports</a></li>
+                          <li><a class="dropdown-item" href="NightlifeScreen.php">NightLife</a></li>
                       </ul>
                   </li>
   
                   <!-- Help Link -->
                   <li class="nav-item">
-                      <a class="nav-link px-3" href="Help.html">
+                      <a class="nav-link px-3" href="Help.php">
                           <span class="nav-icon d-lg-none"><i class="bi bi-question-circle"></i></span>
                           <span class="nav-text d-none d-lg-inline">Help</span>
                       </a>
@@ -72,23 +72,24 @@ session_start();
               <ul class="navbar-nav icon-nav mb-2 mb-lg-0">
                   <!-- Wishlist Link -->
                   <li class="nav-item nav-item-icon-left">
-                      <a class="nav-link px-3" href="Wishlist.html">
+                      <a class="nav-link px-3" href="Wishlist.php">
                           <span class="nav-icon"><i class="bi bi-heart"></i></span>
                       </a>
                   </li>
   
                   <!-- Cart Link -->
                   <li class="nav-item nav-item-icon-left">
-                      <a class="nav-link px-3" href="Cart.html">
+                      <a class="nav-link px-3" href="Cart.php">
                           <span class="nav-icon"><i class="bi bi-cart"></i></span>
                       </a>
                   </li>
   
                   <!-- Profile Link -->
                   <li class="nav-item nav-item-icon-left">
-                      <a class="nav-link px-3" href="loginRegister.php">
-                          <span class="nav-icon"><i class="bi bi-person"></i></span>
-                      </a>
+                  <a class="nav-link px-3" href="<?php echo isset($_SESSION['email']) ? 'profile.php' : 'loginRegister.php'; ?>">
+                        <span class="nav-icon"><i class="bi bi-person"></i></span>
+                        <?php echo isset($_SESSION['email']) ?>
+                    </a>
                   </li>
               </ul>
   
@@ -161,7 +162,7 @@ session_start();
                     <div class="row text-center">
                         <small>Don't have an account? <a href="Register.html" class="text-primary">Sign up here</a></small>
                     </div>
-                    
+
                     <!-- CAPTCHA Section -->
                    
                 </form>
