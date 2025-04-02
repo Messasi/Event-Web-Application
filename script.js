@@ -62,7 +62,7 @@ slider_carouselInit(); // Initialize the carousel
 
 
 
-// Simple CAPTCHA validation 
+/* Simple CAPTCHA validation 
 document.getElementById("loginForm").addEventListener("submit", function(event) {
     const captchaInput = document.getElementById("captcha"); 
     const captchaText = document.getElementById("captchaText").innerText; // Get generated CAPTCHA text
@@ -71,7 +71,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         event.preventDefault(); 
         captchaInput.classList.add("is-invalid"); // Add error class to CAPTCHA input
     }
-});
+});*/
 
 
 
@@ -100,6 +100,28 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+
+
+  document.querySelectorAll(".event-card").forEach(card => {
+    card.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        
+        // Get event details from the card
+        const title = this.getAttribute("data-title");
+        const date = this.getAttribute("data-date");
+        const description = this.getAttribute("data-description");
+        const price = this.getAttribute("data-price");
+
+        // Store data in sessionStorage
+        sessionStorage.setItem("eventTitle", title);
+        sessionStorage.setItem("eventDate", date);
+        sessionStorage.setItem("eventDescription", description);
+        sessionStorage.setItem("eventPrice", price);
+
+        // Redirect to the event details page
+        window.location.href = "profile.html";
+    });
+});
   
 // Fetch and parse the XML file
 // Fetch and parse the XML file
