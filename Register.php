@@ -13,84 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <title>Shopping Basket</title>
-
-
-    <script>
-window.onload = function() {
-    loadXMLDoc();
-};
-
-function loadXMLDoc() {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            myFunction(this);
-        }
-    };
-    xmlhttp.open("GET", "data/nightclub.xml", true);
-    xmlhttp.send();
-}
-
-function myFunction(xml) {
-    var i;
-    var xmlDoc = xml.responseXML;
-    var events = xmlDoc.getElementsByTagName("event");
-
-    // Loop through the first 3 events and populate the cards
-    for (i = 0; i < 3 && i < events.length; i++) {
-        var event = events[i];
-        
-        // Get values from XML
-        var name = event.getElementsByTagName("name")[0].childNodes[0].nodeValue;
-        var venue = event.getElementsByTagName("venue")[0].childNodes[0].nodeValue;
-        var price = event.getElementsByTagName("price")[0].childNodes[0].nodeValue;
-        var datetime = event.getElementsByTagName("datetime")[0].childNodes[0].nodeValue;
-        var image = event.getElementsByTagName("image")[0].childNodes[0].nodeValue;
-
-        // Populate the first 3 cards
-        document.getElementById("card" + (i + 1) + "-img").src = image;
-        document.getElementById("card" + (i + 1) + "-title").textContent = name;
-        document.getElementById("card" + (i + 1) + "-desc").textContent = venue;
-        document.getElementById("card" + (i + 1) + "-price").textContent = price;
-        document.getElementById("card" + (i + 1) + "-date").textContent = datetime;
-    }
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  const searchForm = document.getElementById("searchForm");
-  const searchInput = document.getElementById("searchInput");
-  const cards = document.querySelectorAll(".card"); // Select all card elements
-  const noResults = document.getElementById("noResults");
-
-  searchForm.addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent page relad
-    const query = searchInput.value.toLowerCase().trim();
-
-    // Flag to track if any cards match
-    let hasResults = false;
-
-    // Loop through all cards
-    cards.forEach((card) => {
-      const cardText = card.textContent.toLowerCase(); // Get card's text content
-      if (cardText.includes(query)) {
-        card.style.display = "block"; // Show card if it matches
-        hasResults = true;
-      } else {
-        card.style.display = "none"; // Hide card if it doesn't match
-      }
-    });
-
-    
-  });
-});
-
-      </script>
+    <title>Register</title>
 </head>
 <body>
+     <!-- Navbar -->
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg py-3 shadow-sm">
       <div class="container px-4">
@@ -154,10 +80,9 @@ document.addEventListener("DOMContentLoaded", function () {
   
                   <!-- Profile Link -->
                   <li class="nav-item nav-item-icon-left">
-                    <a class="nav-link px-3" href="<?php echo isset($_SESSION['email']) ? 'profile.php' : 'loginRegister.php'; ?>">
-                        <span class="nav-icon"><i class="bi bi-person"></i></span>
-                        <?php echo isset($_SESSION['email']) ? 'Profile' : 'Login'; ?>
-                    </a>
+                      <a class="nav-link px-3" href="Profile.html">
+                          <span class="nav-icon"><i class="bi bi-person"></i></span>
+                      </a>
                   </li>
               </ul>
   
@@ -174,84 +99,121 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
   </nav>
 
+    <!--Registration page-->
+    <!-- Registration page -->
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="row border rounded-5 box-area shadow bg-white">
+        <!-- Left Section -->
+        <div class="col-md-6 left-box">
+            <div class="featured-image mb-3">
+                <img src="Images/Register/pexels-chuck-2834917.jpg" class="img-fluid" alt="Basketball dunk img">
+            </div>
+            <p class="text-white fs-3 fw-bold">Join Us</p>
+            <small class="text-white text-wrap text-center">
+                Register today to enjoy all the benefits of our services.
+            </small>
+        </div>
 
+        <!-- Right Section -->
+        <div class="col-md-6 right-box">
+            <div class="header-text text-center mb-4">
+                <h2 class="text-primary">Create Account</h2>
+                <p>Fill in the fields below to sign up.</p>
+            </div>
+            <form id="registerForm" method="POST" action="profile.php" >
 
-<!-- Nightlife Section -->
-<section class="nightlife-section">
-  
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="firstName" placeholder="First Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="lastName" placeholder="Last Name" required>
+                </div>
 
+                <!-- Email -->
+                <div class="mb-3">
+                    <input type="email" class="form-control form-control-lg bg-light fs-6" id="email" name="email" placeholder="Email Address" required>
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+                <!-- Password -->
+                <div class="mb-3">
+                    <input type="password" class="form-control form-control-lg bg-light fs-6" id="password" placeholder="Password" minlength="6" name="password" required>
+                    <div class="invalid-feedback">Password must be at least 6 characters long.</div>
+                </div>
+                <!-- Confirm Password -->
+                <div class="mb-3">
+                    <input type="password" class="form-control form-control-lg bg-light fs-6" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                    <div class="invalid-feedback">Passwords must match.</div>
+                </div>
+                <!-- Date of Birth -->
+                <div class="mb-3">
+                    <input type="date" class="form-control form-control-lg bg-light fs-6" id="dob" name="DOB" required>
+                    <div class="invalid-feedback">Please enter your date of birth.</div>
+                </div>
+                <!-- Phone Number -->
+                <div class="mb-3">
+                    <input type="text" class="form-control form-control-lg bg-light fs-6" id="phone" placeholder="Phone Number" name="phoneNumber" pattern="^\d{10,15}$" required>
+                    <div class="invalid-feedback">Please enter a valid phone number.</div>
+                </div>
+                <!-- Address -->
+                <div class="mb-3">
+                    <input type="text" class="form-control form-control-lg bg-light fs-6" id="address" placeholder="Address" name="address" required>
+                    <div class="invalid-feedback">Please enter your address.</div>
+                </div>
+                <!-- Apartment/House Number -->
+                <div class="mb-3">
+                    <input type="text" class="form-control form-control-lg bg-light fs-6" id="apartmentNumber" name="houseNumber" placeholder="Apartment/House Number" required>
+                    <div class="invalid-feedback">Please enter your apartment or house number.</div>
+                </div>
+                <!-- Post code -->
+                <div class="mb-3">
+                    <input type="text" class="form-control form-control-lg bg-light fs-6" id="postalCode" placeholder="Postal Code" name=postCode    pattern="^[A-Z]{1,2}\d[A-Z\d]? \d[A-Z]{2}$" required>
+                    <div class="invalid-feedback">Please enter a valid postal code.</div>
+                </div>
+                <!-- Country -->
+                <div class="mb-3">
+                    <select class="form-select form-control-lg bg-light fs-6" id="country" required>
+                        <option value="" disabled selected>Select Your Country</option>
+                        <option value="US">United States</option>
+                        <option value="GB">United Kingdom</option>
+                        <option value="CA">Canada</option>
+                        <option value="AU">Australia</option>
+                    </select>
+                    <div class="invalid-feedback">Please select your country.</div>
+                </div>
+                <!-- Accept Terms -->
+                <div class="form-check mb-4">
+                    <input type="checkbox" class="form-check-input" id="acceptTerms" required>
+                    <label class="form-check-label" for="acceptTerms">
+                        I accept the <a href="#" class="text-primary">Terms and Conditions</a>
+                    </label>
+                    <div class="invalid-feedback">You must accept the terms and conditions to proceed.</div>
+                </div>
+                <!-- Submit Button -->
+                <div class="mb-3" >
+                    <button type="submit" class="btn btn-lg btn-primary w-100 fs-6" name="register">Register</button>
+                </div>
+                <!-- Third-Party Signup -->
+                <div class="sign-in-buttons">
+                    <div class="input-group mb-3">
+                        <button type="button" class="btn btn-lg btn-outline-primary w-100 fs-6 d-flex align-items-center justify-content-center">
+                            <img src="Images/Login Form/Google logo.png" class="me-2" style="width: 20px;" alt="Google">
+                            Sign up with Google
+                        </button>
+                    </div>
+                    <div class="input-group mb-3">
+                        <button type="button" class="btn btn-lg btn-outline-dark w-100 fs-6 d-flex align-items-center justify-content-center">
+                            <img src="Images/Login Form/apple logo login form.png" class="me-2" style="width: 20px;" alt="Apple">
+                            Sign up with Apple
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
-
-  <div class="section-header">
-      <img src="Images/SubPages/pexels-maorattias-5152572.jpg" alt="Nightlife Events">
-      <h1>Club Nightlife Events</h1>
-  </div>
-
-  <div class="section-title">
-      <h1>Nightlife Events in Nottingham</h1>
-
-      <br><br>
-      <table id="demo"></table>
-
-
-      <div class="container section-cards">
-          <div class="row g-4">
-              <!-- Static Card 1 -->
-              <div class="col-12 col-md-4">
-                  <div href="event1.html" class="card shadow-sm">
-                    <div class="favorite-heart">
-                        <i class="fa-regular fa-heart"></i> <!-- Outlined heart initially -->
-                      </div>
-                      <img class="card-img-top" id="card1-img" alt="Event 1">
-                      <div class="card-body">
-                          <h5 class="card-title" id="card1-title"></h5>
-                          <p class="card-text" id="card1-desc"></p>
-                          <p class="card-text"><strong>Price:</strong> <span id="card1-price"></span></p>
-                          <p class="card-text"><strong>Date:</strong> <span id="card1-date"></span></p>
-                      </div>
-                  </div>
-              </div>
-      
-              <!-- Static Card 2 -->
-              <div class="col-12 col-md-4">
-                  <div href="event1.html" class="card shadow-sm">
-                    <div class="favorite-heart">
-                        <i class="fa-regular fa-heart"></i> <!-- Outlined heart initially -->
-                      </div>
-                      <img class="card-img-top" id="card2-img" alt="Event 2">
-                      <div class="card-body">
-                          <h5 class="card-title" id="card2-title"></h5>
-                          <p class="card-text" id="card2-desc"></p>
-                          <p class="card-text"><strong>Price:</strong> <span id="card2-price"></span></p>
-                          <p class="card-text"><strong>Date:</strong> <span id="card2-date"></span></p>
-                      </div>
-                  </div>
-              </div>
-      
-              <!-- Static Card 3 -->
-              <div class="col-12 col-md-4">
-                  <div  href="event1.html" class="card shadow-sm">
-                    <div class="favorite-heart">
-                        <i class="fa-regular fa-heart"></i> <!-- Outlined heart initially -->
-                      </div>
-                      <img class="card-img-top" id="card3-img" alt="Event 3">
-                      <div class="card-body">
-                          <h5 class="card-title" id="card3-title"></h5>
-                          <p class="card-text" id="card3-desc"></p>
-                          <p class="card-text"><strong>Price:</strong> <span id="card3-price"></span></p>
-                          <p class="card-text"><strong>Date:</strong> <span id="card3-date"></span></p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-</section>
-
-  
-  
-  
-   <!--Footer-->
-   <footer class="bg-dark text-light py-4">
+    <!--Footer-->
+    <footer class="bg-dark text-light py-4">
     <div class="container px-4">
         <div class="row">
             <!-- Company Info -->
@@ -301,18 +263,14 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </div>
 </footer>
+      
 
-
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-<!-- Owl Carousel -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
       <script src="script.js"></script>
-     
     
       <!-- Bootstrap JavaScript bundle (includes Bootstrap's JavaScript) -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
