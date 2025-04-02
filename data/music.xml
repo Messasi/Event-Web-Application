@@ -6,19 +6,22 @@
     <price>£25</price>
     <datetime>2024-12-10</datetime>
     <image>Images/SubPages/Music/jazzImg.jpg</image>
-  </event>
-  <event>
+    <description>Immerse yourself in a night of smooth melodies and soulful rhythms as top jazz musicians take the stage. Experience an intimate evening filled with timeless classics and modern improvisations.</description>
+</event>
+<event>
     <name>Rock Fest</name>
     <venue>Rock Arena</venue>
     <price>£35</price>
     <datetime>2024-12-12</datetime>
     <image>Images/SubPages/Music/Rock.jpg</image>
-  </event>
-  <event>
+    <description>Get ready to headbang and feel the energy of electrifying guitar riffs, pounding drums, and powerful vocals at this high-energy rock festival. A must-attend for all rock enthusiasts!</description>
+</event>
+<event>
     <name>Classical Evening</name>
     <venue>Concert Hall</venue>
     <price>£40</price>
     <datetime>2024-12-14</datetime>
     <image>Images/SubPages/Music/classical.jpg</image>
-  </event>
+    <description>Experience the magic of a classical symphony performed by world-class musicians. Let the soothing strings and majestic brass transport you to a world of musical elegance.</description>
+</event>
 </musicEvents>
